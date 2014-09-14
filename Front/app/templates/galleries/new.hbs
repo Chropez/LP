@@ -1,0 +1,15 @@
+<h2>
+	New Gallery
+</h2>
+
+{{partial 'partials/gallery-form'}}
+
+<div class="form-group">
+	{{#link-to 'galleries' activeClass="" classNames="btn btn-link"}}Back{{/link-to}}
+	<button class="btn btn-primary" {{action "save"}}>Add Gallery</button>
+</div>
+
+<div class="hide">
+	<input type="file" id="fileupload" multiple/>
+</div>
+

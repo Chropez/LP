@@ -1,0 +1,32 @@
+<div class="form-group">
+	<label class="control-label">Owner: </label> {{model.owner}}!
+	<br/>
+	<label class="control-label" for="title">Title</label>
+	{{input value=model.title placeholder="Title" classNames="form-control" }}
+</div>
+<div class="form-group">
+	<label class="control-label" for="description">Description</label>
+	{{textarea rows=3 
+		value=model.description 
+		placeholder="Description"
+		classNames="form-control" }}
+</div>
+
+<hr/>
+	
+<div class="form-group">
+	<button class="btn" {{action "addGalleryItem"}}>
+		<i class="fa fa-plus"></i>
+		Add Gallery Item
+	</button>
+</div>
+
+<div class="gallery-items-container">
+	{{#each galleryItem in model.galleryItems}}
+		<div class="row">
+			{{render 'gallery-item' galleryItem}}
+		</div>
+	{{/each}}  
+</div>
+
+<hr/> 

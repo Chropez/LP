@@ -1,0 +1,27 @@
+<div class="well">
+	<div class="row gallery-item-wrapper">
+		<div  class="col-md-4">
+			{{#if url}}
+				<img class="img-responsive" {{bind-attr src="url"}} width=600>
+			{{/if}}
+		</div>
+		
+		<div class="col-md-8">
+			<div class="form-group">
+				<label class="control-label">
+					Title
+				</label>
+				{{input value=title classNames="form-control"}}	
+			</div>
+			<div class="form-group">
+				<label class="control-label">
+					Description
+				</label>
+				{{textarea rows=3 value=description classNames="form-control"}}
+			</div>
+			
+		</div>
+
+
+	</div>
+</div>   

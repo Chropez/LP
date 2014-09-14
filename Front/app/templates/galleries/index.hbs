@@ -1,0 +1,49 @@
+<h2>Galleries</h2>
+<div class="row" style="margin-top:15px;">
+
+
+
+  	<h3>Galleries<small> : {{galleryCount}}</small></h3>
+
+	{{#each gallery in controller}}
+	  <div class="well">
+	  	<h2>{{gallery.title}} <small>by {{gallery.owner}}</small></h2>
+	  	<hr/>
+	  	<ul>
+	  	{{!--#each galleryItem in gallery.galleryItems}}
+			<li>
+				{{galleryItem.title}}
+			</li>
+	  	{{/each--}}
+	  	</ul>
+
+	  	<hr/>
+	  	<div>
+	  		{{#link-to 'gallery' gallery classNames="btn btn-link"}}Show{{/link-to}} |
+	  		{{#link-to 'gallery.edit' gallery classNames="btn btn-link"}}Edit{{/link-to}} |
+	  		
+	  		<button class="btn btn-link" {{action "showDeleteDialog" gallery}}>Delete</button>
+
+	  		{{!
+	  		{ {bs-button title="Delete"  type="link" clicked="showDeleteDialog" content="gallery"} }
+	  		}}
+			
+	  	</div>
+	  </div>
+	{{/each}}
+
+	{{#bs-modal name="deleteDialog" 
+		fade=true 
+		footerButtonsBinding="deleteModalButtons"
+		title="Delete Gallery"
+	}}
+	
+		<p>Do you want to delete this gallery?</p>
+		{{selectedGallery.title}}
+	{{/bs-modal}}
+
+	{{#link-to 'galleries.new' classNames="btn btn-primary"}}
+		<span class="glyphicon glyphicon-plus"></span>
+		Add Gallery
+	{{/link-to}}
+</div>

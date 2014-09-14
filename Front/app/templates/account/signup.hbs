@@ -1,0 +1,40 @@
+<h2>Sign Up</h2>
+<div class="row">
+	<form role="form" class="form-horizontal" {{action "signup" on="submit"}}>
+
+		<div class="form-group">
+			<label for="username" class="control-label col-sm-4">
+				Username
+			</label>
+			<div class="col-sm-6">
+				{{input type="text" value=model.userName classNames="form-control"}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password" class="control-label col-sm-4">
+				Password
+			</label>
+			<div class="col-sm-6">
+				{{input type="password" value=model.password classNames="form-control"}}
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="password" class="control-label col-sm-4">
+				Repeat Password
+			</label>
+			<div class="col-sm-6">
+				{{input type="password" value=model.confirmPassword classNames="form-control"}}
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-6">
+				<button class="btn btn-primary" type="submit">Sign Up</button>
+			</div>
+		</div>
+
+
+
+	</form>
+</div>
