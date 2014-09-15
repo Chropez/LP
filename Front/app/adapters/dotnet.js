@@ -3,8 +3,8 @@ import DS from 'ember-data';
 export default DS.RESTAdapter.extend({
   namespace: 'api', 
 
-  pathForType: function(type){
-      return type.camelize().capitalize();
+  pathForType: function(type){   
+      return this._super(type).camelize().capitalize();
   },
 
   createRecord: function(store, type, record){
