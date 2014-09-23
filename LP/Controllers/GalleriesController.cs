@@ -96,6 +96,11 @@ namespace LP.Controllers
             {
                 return NotFound();
             }
+            if (gallery.GalleryItems.Count > 0)
+            {
+                gallery.GalleryItems.ToList().ForEach(item => db.GalleryItems.Remove(item));
+                db.SaveChanges();
+            }
 
             db.Galleries.Remove(gallery);
             await db.SaveChangesAsync();

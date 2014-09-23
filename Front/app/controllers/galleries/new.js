@@ -33,7 +33,8 @@ export default Ember.ObjectController.extend({
 			//Fileupload Settings
 			$fileUploadInput.fileupload({
 				url: 'Upload',
-				dataType: 'json'
+				dataType: 'json',
+				autoUpload: false
 			});
 
 
@@ -89,7 +90,7 @@ export default Ember.ObjectController.extend({
 			.success( function(result, textStatus, jqXHR){
 				galleryItem.set('url', result.Url) ;
 			});
-		
+			
 		return galleryItem;
 	}
 

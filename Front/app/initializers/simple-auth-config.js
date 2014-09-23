@@ -7,7 +7,10 @@ export default {
 
     window.ENV = window.ENV || {};
     window.ENV['simple-auth-oauth2'] = {
-    	refreshAccessTokens: true
+    	refreshAccessTokens: true,
+    	authorizer: 'simple-auth-authorizer:oauth2-bearer'
     };
+
+   
   }
 };
