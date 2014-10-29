@@ -104,7 +104,7 @@ namespace LP.Controllers
 
             db.Galleries.Remove(gallery);
             await db.SaveChangesAsync();
-             
+
             return Ok(gallery);
         }
 

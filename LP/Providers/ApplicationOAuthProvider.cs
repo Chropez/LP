@@ -12,12 +12,12 @@ using Microsoft.Owin.Security.OAuth;
 using LP.Models;
 
 namespace LP.Providers
-{ 
+{
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
 
-        public ApplicationOAuthProvider(string publicClientId) 
+        public ApplicationOAuthProvider(string publicClientId)
         {
             if (publicClientId == null)
             {

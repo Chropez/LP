@@ -54,7 +54,7 @@ namespace LP.Controllers
 
 
                 //Thread.Sleep(10000);
-                var t = "test";
+
                 return Request.CreateResponse(HttpStatusCode.OK, uploadedFiles.First());
             }
             catch (System.Exception e)
