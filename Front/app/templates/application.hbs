@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse"	data-target=".main-header-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'index'  classNames="navbar-brand"}}Lulo-photos{{/link-to}}
+    </div>
+    <nav class="collapse navbar-collapse main-header-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        {{#link-to 'galleries' href=false tagName="li"}}
+          {{#link-to 'galleries' bubbles=false}}
+            Galleries
+          {{/link-to}}  
+
+        {{/link-to}}
+
+        {{#link-to 'about' href=false tagName="li"}}
+        <a href="#">About</a>
+        {{/link-to}}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{#if session.isAuthenticated}}
+          <li >
+            <p class="navbar-text">
+              Welcome, 
+              <a href="#">{{session.userName}}!</a>
+              | <a href="#" {{action 'invalidateSession'}}>Sign Out</a>
+            </p>
+          </li>
+        {{else}}
+        {{#link-to 'account.signin' href=false tagName="li"}}
+          {{#link-to 'account.signin' bubbles=false}}
+            Sign In
+          {{/link-to}}  
+
+        {{/link-to}}
+{{!--
+          {{#link-to 'login' tagName="li"}}
+            <a href="#">Log in</a>
+          {{/link-to}}
+--}}
+        {{/if}}
+      </ul>
+    </nav>
+  </div> 
+</nav>
+
+{{outlet}}
+
+{{outlet modal}}
